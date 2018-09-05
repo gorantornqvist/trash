@@ -1,0 +1,11 @@
+---
+- name: Ping all servers
+  hosts: all
+  tasks:
+  - name: Ping a server using the ping module
+    ping:
+      data: pong
+    register: ping_answer
+  - name: Output of ping
+    debug:
+      msg: "return: '{{ping_answer}}'"
